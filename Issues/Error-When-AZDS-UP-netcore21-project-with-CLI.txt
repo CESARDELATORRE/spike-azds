@@ -1,0 +1,5 @@
+
+
+PS D:\GitRepos\spike-azds-master\SpikeAzureDevSpaces.AspNetCore21\webmvc> azds up
+Using AKS cluster: 'eShopAksDevSpacesCluster'
+Synchronizing files...Failed to parse the .gitignore file at 'D:\GitRepos\spike-azds-master\SpikeAzureDevSpaces.AspNetCore21\webmvc\.gitignore': parsing '/Generated\Files/' - Unrecognized escape sequence \\F.

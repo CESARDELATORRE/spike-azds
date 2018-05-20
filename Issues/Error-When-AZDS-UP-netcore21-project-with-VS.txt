@@ -1,0 +1,79 @@
+
+
+Starting warmup for project 'webmvc'.
+An error occurred during warmup for project 'webmvc':
+System.ArgumentException: Failed to parse the .gitignore file at 'D:\GitRepos\spike-azds-master\SpikeAzureDevSpaces.AspNetCore21\.gitignore': parsing "/Generated\Files/" - Unrecognized escape sequence \F.
+   at GitSharp.GitIgnoreRules.BuildRules(List`1 rules, String line, String checkFlagFile)
+   at GitSharp.GitIgnoreRules.BuildRules(List`1 rules, IEnumerable`1 lines)
+   at GitSharp.GitIgnoreRules.BuildRulesFromPath(String ignorePath)
+   at GitSharp.GitIgnoreRules.BuildRulesFromPath(String ignorePath)
+   at GitSharp.GitIgnoreRules.Load()
+   at Microsoft.Mindaro.Client.Sync.IgnoreRulesFactory.<>c.<Create>b__9_0(IIgnoreRules r)
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Microsoft.Mindaro.Client.Sync.IgnoreRulesFactory.Create(String localFullPath)
+   at Microsoft.Mindaro.Client.Sync.Workspace.WorkspaceSync.<Synchronize>d__19.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.Mindaro.Client.Sync.SyncClient.<SynchronizeAsync>d__9.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.Mindaro.Client.ManagementClients.ServiceManagementClient.<SyncCodeAsync>d__29.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd(Task task)
+   at Microsoft.Mindaro.Client.ManagementClients.ServiceManagementClient.<StartServiceAsync>d__15.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd(Task task)
+   at Microsoft.Mindaro.Client.ManagementClients.ServiceManagementClient.<EnsureStartServiceForIterateAsync>d__64.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd(Task task)
+   at Microsoft.Mindaro.Client.ManagementClients.ServiceManagementClient.<ExecuteNextIterationAsync>d__59.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.VisualStudio.Azure.DevSpaces.Tools.Common.Client.VsceServiceClient.<>c__DisplayClass24_1.<<StartDebugAsync>b__1>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.VisualStudio.Azure.DevSpaces.Tools.Common.Logging.PerfLoggerExtensions.<ExecuteOperationAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.VisualStudio.Azure.DevSpaces.Tools.Common.Client.VsceServiceClient.<>c__DisplayClass24_0.<<StartDebugAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.VisualStudio.Azure.DevSpaces.Tools.Common.Logging.PerfLoggerExtensions.<ExecuteOperationAsync>d__3`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.VisualStudio.Azure.DevSpaces.Tools.Common.Logging.PerfLoggerExtensions.<ExecuteOperationAsync>d__3`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd(Task task)
+   at Microsoft.VisualStudio.Azure.DevSpaces.Tools.Package.Services.DebugService.<WarmupProjectAsync>d__20.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.VisualStudio.Azure.DevSpaces.Tools.Package.Services.BackgroundWarmupService.<>c__DisplayClass10_0.<<ExecuteWarmupAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.VisualStudio.Azure.DevSpaces.Tools.Common.Logging.PerfLoggerExtensions.<ExecuteOperationAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.VisualStudio.Azure.DevSpaces.Tools.Common.Logging.PerfLoggerExtensions.<ExecuteOperationAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.VisualStudio.Azure.DevSpaces.Tools.Package.Services.BackgroundWarmupService.<ExecuteWarmupAsync>d__10.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.VisualStudio.Azure.DevSpaces.Tools.Package.Services.BackgroundWarmupService.<>c__DisplayClass8_0.<<WarmupProject>b__3>d.MoveNext()
+Completed warmup for project 'webmvc' in 4 seconds.
