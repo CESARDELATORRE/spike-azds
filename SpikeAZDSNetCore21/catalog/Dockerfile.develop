@@ -1,0 +1,16 @@
+FROM microsoft/aspnetcore-build:2.1
+ENV ASPNETCORE_ENVIRONMENT=Development
+ENV DOTNET_USE_POLLING_FILE_WATCHER=true
+
+EXPOSE 80
+
+WORKDIR /src
+COPY SpikeAZDSNetCore21.sln ./
+COPY catalog/catalog.csproj catalog/
+
+RUN dotnet restore -nowarn:msb3202,nu1503
+COPY . .
+WORKDIR /src/catalog
+RUN dotnet build catalog.csproj
+
+CMD ["dotnet", "run", "--no-restore", "--no-build", "--no-launch-profile"]

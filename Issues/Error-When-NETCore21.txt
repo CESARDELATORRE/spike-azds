@@ -1,0 +1,103 @@
+
+
+FROM CLI:
+
+azds up
+Using AKS cluster: 'eShopAksDevSpacesCluster'
+Synchronizing files...7s
+Installing chart...2s
+Building container image...
+Step 1/12 : FROM microsoft/aspnetcore-build:2.1
+Build Failed.
+Service cannot be started.
+
+
+FROM VISUAL STUDIO:
+
+
+Starting warmup for project 'webmvc'.
+An error occurred during warmup for project 'webmvc':
+System.InvalidOperationException: Service can not be started.
+   at Microsoft.Mindaro.Client.ManagementClients.ServiceManagementClient.<ExecuteNextIterationAsync>d__59.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.VisualStudio.Azure.DevSpaces.Tools.Common.Client.VsceServiceClient.<>c__DisplayClass24_1.<<StartDebugAsync>b__1>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.VisualStudio.Azure.DevSpaces.Tools.Common.Logging.PerfLoggerExtensions.<ExecuteOperationAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.VisualStudio.Azure.DevSpaces.Tools.Common.Client.VsceServiceClient.<>c__DisplayClass24_0.<<StartDebugAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.VisualStudio.Azure.DevSpaces.Tools.Common.Logging.PerfLoggerExtensions.<ExecuteOperationAsync>d__3`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.VisualStudio.Azure.DevSpaces.Tools.Common.Logging.PerfLoggerExtensions.<ExecuteOperationAsync>d__3`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd(Task task)
+   at Microsoft.VisualStudio.Azure.DevSpaces.Tools.Package.Services.DebugService.<WarmupProjectAsync>d__20.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.VisualStudio.Azure.DevSpaces.Tools.Package.Services.BackgroundWarmupService.<>c__DisplayClass10_0.<<ExecuteWarmupAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.VisualStudio.Azure.DevSpaces.Tools.Common.Logging.PerfLoggerExtensions.<ExecuteOperationAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.VisualStudio.Azure.DevSpaces.Tools.Common.Logging.PerfLoggerExtensions.<ExecuteOperationAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.VisualStudio.Azure.DevSpaces.Tools.Package.Services.BackgroundWarmupService.<ExecuteWarmupAsync>d__10.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.VisualStudio.Azure.DevSpaces.Tools.Package.Services.BackgroundWarmupService.<>c__DisplayClass8_0.<<WarmupProject>b__3>d.MoveNext()
+Completed warmup for project 'webmvc' in 21 seconds.
+Enabling debugging...
+Using AKS cluster: 'eShopAksDevSpacesCluster'
+NAME:   default-webmvc-fd5865cf
+LAST DEPLOYED: Sun May 20 20:39:05 2018
+NAMESPACE: default
+STATUS: DEPLOYED
+RESOURCES:
+==> v1/Service
+NAME    TYPE       CLUSTER-IP  EXTERNAL-IP  PORT(S)  AGE
+webmvc  ClusterIP  10.0.84.84  <none>       80/TCP   0s
+==> v1beta2/Deployment
+NAME    DESIRED  CURRENT  UP-TO-DATE  AVAILABLE  AGE
+webmvc  1        1        1           0          0s
+==> v1beta1/Ingress
+NAME    HOSTS                                                         ADDRESS  PORTS  AGE
+webmvc  webmvc.9d42f065-dfa2-4fc6-a273-ea2bf8ccd177.eastus.aksapp.io  80       0s
+==> v1/Pod(related)
+NAME                     READY  STATUS    RESTARTS  AGE
+webmvc-5b6cf66d6b-5m7dw  0/2    Init:0/4  0         0s
+NOTES:
+1. Get the application URL by running these commands:
+  http://webmvc.9d42f065-dfa2-4fc6-a273-ea2bf8ccd177.eastus.aksapp.io/
+Building container image...
+Sending build context to Docker daemon  2.514MB
+Step 1/12 : FROM microsoft/aspnetcore-build:2.1
+Build Failed.
+Service cannot be started.
+
+
+---------------------------
+Microsoft Visual Studio
+---------------------------
+An error occurred while preparing the Azure Dev Spaces resource:
+Failed to parse the .gitignore file at 'D:\GitRepos\spike-azds-master\SpikeAZDSNetCore20\.gitignore': parsing "/Generated\Files/" - Unrecognized escape sequence \F.
+
+Failed to parse the .gitignore file at 'D:\GitRepos\spike-azds-master\SpikeAZDSNetCore20\.gitignore': parsing "/Generated\Files/" - Unrecognized escape sequence \F.
+---------------------------
+OK   
+---------------------------
+
