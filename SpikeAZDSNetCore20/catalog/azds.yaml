@@ -9,32 +9,29 @@ install:
   - values.dev.yaml?
   - secrets.dev.yaml?
   set:
+    replicaCount: 1
     image:
       tag: $(tag)
       pullPolicy: Never
-    disableProbes: true
-    # This ingress section specifies whether AZDS should expose
-    # an endpoint like http://catalog.<guid>.<region>.aksapp.io
     ingress:
-      enabled: true
       hosts:
+      # This expands to [space.s.]catalog.<guid>.<region>.aksapp.io
       - $(spacePrefix)catalog$(hostSuffix)
-      annotations:
-        kubernetes.io/ingress.class: addon-http-application-routing
 configurations:
   develop:
     build:
       dockerfile: Dockerfile.develop
       useGitIgnore: true
+      args:
+        BUILD_CONFIGURATION: ${BUILD_CONFIGURATION:-Debug}
     container:
-      syncTarget: /src
       sync:
       - "**/Pages/**"
       - "**/Views/**"
       - "**/wwwroot/**"
       - "!**/*.{sln,csproj}"
-      command:  [dotnet, run, --no-restore, --no-build, --no-launch-profile, -c, "${Configuration:-Debug}"]
+      command: [dotnet, run, --no-restore, --no-build, --no-launch-profile, -c, "${BUILD_CONFIGURATION:-Debug}"]
       iterate:
-        processesToKill: [dotnet]
+        processesToKill: [dotnet, vsdbg]
         buildCommands:
-        - [dotnet, build, --no-restore, -c, "${Configuration:-Debug}"]
+        - [dotnet, build, --no-restore, -c, "${BUILD_CONFIGURATION:-Debug}"]

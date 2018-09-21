@@ -1,16 +1,15 @@
 FROM microsoft/aspnetcore-build:2.0
+ARG BUILD_CONFIGURATION=Debug
 ENV ASPNETCORE_ENVIRONMENT=Development
 ENV DOTNET_USE_POLLING_FILE_WATCHER=true
-
 EXPOSE 80
 
 WORKDIR /src
-COPY SpikeAZDSNetCore20.sln ./
-COPY webmvc/webmvc.csproj webmvc/
+COPY ["webmvc/webmvc.csproj", "webmvc/"]
 
-RUN dotnet restore -nowarn:msb3202,nu1503
+RUN dotnet restore "webmvc/webmvc.csproj"
 COPY . .
-WORKDIR /src/webmvc
-RUN dotnet build webmvc.csproj
+WORKDIR "/src/webmvc"
+RUN dotnet build --no-restore "webmvc.csproj" -c $BUILD_CONFIGURATION
 
-CMD ["dotnet", "run", "--no-restore", "--no-build", "--no-launch-profile"]
+ENTRYPOINT ["dotnet", "run", "--no-restore", "--no-build", "--no-launch-profile", "-c", "$BUILD_CONFIGURATION", "--"]

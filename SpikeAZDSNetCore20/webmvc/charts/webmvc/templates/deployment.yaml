@@ -5,6 +5,7 @@ metadata:
   labels:
     app: {{ template "webmvc.name" . }}
     chart: {{ template "webmvc.chart" . }}
+    draft: {{ default "draft-app" .Values.draft }}
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
 spec:
@@ -17,7 +18,10 @@ spec:
     metadata:
       labels:
         app: {{ template "webmvc.name" . }}
+        draft: {{ default "draft-app" .Values.draft }}
         release: {{ .Release.Name }}
+      annotations:
+        buildID: {{ .Values.buildID }}
     spec:
       containers:
         - name: {{ .Chart.Name }}
@@ -27,7 +31,7 @@ spec:
             - name: http
               containerPort: 80
               protocol: TCP
-          {{- if not .Values.disableProbes }}
+          {{- if .Values.probes.enabled }}
           livenessProbe:
             httpGet:
               path: /
@@ -41,10 +45,10 @@ spec:
             {{- $root := . }}
             {{- range $ref, $values := .Values.secrets }}
             {{- range $key, $value := $values }}
-            - name: {{ $ref | upper }}_{{ $key | upper }}
+            - name: {{ $ref }}_{{ $key }}
               valueFrom:
                 secretKeyRef:
-                  name: {{ template "webmvc.fullname" $root }}-{{ $ref }}
+                  name: {{ template "webmvc.fullname" $root }}-{{ $ref | lower }}
                   key: {{ $key }}
             {{- end }}
             {{- end }}
