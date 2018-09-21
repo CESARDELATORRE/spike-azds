@@ -21,7 +21,7 @@ namespace catalog.Controllers
         [HttpGet("{id}")]
         public ActionResult<string> Get(int id)
         {
-            return "value";
+            return "Service on ASP.NET Core 2.1";
         }
 
         // POST api/values
