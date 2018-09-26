@@ -14,15 +14,31 @@ namespace catalog.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
-            return new string[] { "value1", "value2" };
+            return new string[] { ".NET Mug", "Cup<T>", ".NET Foundation T-shirt" };
         }
 
         // GET api/values/5
         [HttpGet("{id}")]
         public ActionResult<string> Get(int id)
         {
-            return "value";
+            //return "Howdy! From <Cesar's> space";
+
+            return "Howdy! From <default> space";
         }
+
+        //// GET api/values
+        //[HttpGet]
+        //public ActionResult<IEnumerable<string>> Get()
+        //{
+        //    return new string[] { "value1", "value2" };
+        //}
+
+        //// GET api/values/5
+        //[HttpGet("{id}")]
+        //public ActionResult<string> Get(int id)
+        //{
+        //    return "Service on ASP.NET Core 2.1";
+        //}
 
         // POST api/values
         [HttpPost]

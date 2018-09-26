@@ -20,9 +20,9 @@ namespace catalog.Controllers
         [HttpGet("{id}")]
         public string Get(int id)
         {
-            //return "Howdy! From Cesar's space";
+            return "Howdy! From Cesar's space";
 
-            return "Howdy! From default space";
+            //return "Howdy! From default space";
             //return "Howdy! From Isolated space";
         }
 

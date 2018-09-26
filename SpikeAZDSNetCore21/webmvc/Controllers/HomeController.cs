@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using webmvc.Models;
 
+using System.Net.Http;
+
 namespace webmvc.Controllers
 {
     public class HomeController : Controller
@@ -15,9 +17,25 @@ namespace webmvc.Controllers
             return View();
         }
 
-        public IActionResult About()
+        public async Task<IActionResult> About()
         {
-            ViewData["Message"] = "Your application description page.";
+            ViewData["Message"] = "(Web-App in Default Space) Value from Catalog-microservice";
+
+            // Need to propagate AZDS headers in the incoming request to any outgoing requests
+            using (var client = new HttpClient())
+            {
+                // Call *catalog* service through internal name resolution 
+                // and display its response in the page
+                var request = new HttpRequestMessage();
+                request.RequestUri = new Uri("http://catalog/api/values/1");
+                if (this.Request.Headers.ContainsKey("azds-route-as"))
+                {
+                    // Propagate the dev space routing header
+                    request.Headers.Add("azds-route-as", this.Request.Headers["azds-route-as"] as IEnumerable<string>);
+                }
+                var response = await client.SendAsync(request);
+                ViewData["Message"] += " : " + await response.Content.ReadAsStringAsync();
+            }
 
             return View();
         }
